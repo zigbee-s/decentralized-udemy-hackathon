@@ -2,14 +2,15 @@ import React from "react";
 // import Image from "next/image";
 // import footerIcon from "../../images/footer-icon.png";
 import './footer.css'
+
 function Footer() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-8">
       <div className="p-8 mt-auto">
         <div className="max-w-7xl mx-auto">
           <div className="flex gap-4 justify-between max-md:flex-col max-md:text-center">
             <div className="mb-5">
-              <h4 className="mt-1 logo text-[#000000] text-3xl font-bold text-center pb-1 pt-3">
+              <h4 className="mt-1 font-lily-script-one text-[#000000] text-3xl font-bold text-center pb-1 pt-3">
                 <div className="flex items-center justify-center">
                   {/* <div className="pr-2 mt-2">
                     <Image src={footerIcon} height={52} width={24.69} alt="" />
