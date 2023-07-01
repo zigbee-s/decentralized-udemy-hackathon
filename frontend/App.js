@@ -7,6 +7,9 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import React, { useState, useEffect } from 'react';
+
+
 import Explore from "./pages/explore/Explore";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
@@ -20,21 +23,14 @@ import './assets/global.css';
 import { EducationalText, SignInPrompt, SignOutButton } from './ui-components';
 
 
-export default function App({ isSignedIn, contractId, wallet }) {
-  const [valueFromBlockchain, setValueFromBlockchain] = React.useState();
+export default function App({ isSignedIn, marketPlace, wallet }) {
 
-  const [uiPleaseWait, setUiPleaseWait] = React.useState(true);
+  const [uiPleaseWait, setUiPleaseWait] = useState(true);
 
   // Get blockchian state once on component load
-  React.useEffect(() => {
-    getGreeting()
-      .then(setValueFromBlockchain)
-      .catch(alert)
-      .finally(() => {
-        setUiPleaseWait(false);
-      });
-  }
-    , []);
+  useEffect(() => {
+
+  }, []);
 
   /// If user not signed-in with wallet - show prompt
   if (!isSignedIn) {
@@ -52,22 +48,22 @@ export default function App({ isSignedIn, contractId, wallet }) {
     <>
       <SignOutButton accountId={wallet.accountId} onClick={() => wallet.signOut()} />
       <main className={uiPleaseWait ? 'please-wait' : ''}>
-      <>
-    <Router>
-      <Navbar/>
-      <main>
-        <Routes>
-          <Route path="/" element={<Explore/>} exact/>
-          <Route path="/buyCourse" element={<BuyCourse/>} exact/>
-          <Route path="/course" element={<Course/>} exact/>
-          <Route path="/create" element={<Create/>} exact/>
-          <Route path="/profile" element={<Profile/>} exact/>
-          <Route path="*" element={<Navigate to='/' replace/>}/>
-        </Routes>
-      </main>
-      <Footer/>
-    </Router>
-   </>
+        <>
+          <Router>
+            <Navbar />
+            <main>
+              <Routes>
+                <Route path="/" element={<Explore marketPlace={marketPlace} />} exact />
+                <Route path="/buyCourse" element={<BuyCourse />} exact />
+                <Route path="/course" element={<Course />} exact />
+                <Route path="/create" element={<Create marketPlace={marketPlace} />} exact />
+                <Route path="/profile" element={<Profile />} exact />
+                <Route path="*" element={<Navigate to='/' replace />} />
+              </Routes>
+            </main>
+            <Footer />
+          </Router>
+        </>
       </main>
     </>
   );

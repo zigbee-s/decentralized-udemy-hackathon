@@ -1,25 +1,25 @@
 // React
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
-// import './tailwind.config';
-// import './index.css';
 
 // NEAR
+import { MarketPlace } from './near-interface';
 import { Wallet } from './near-wallet';
 
-const CONTRACT_ADDRESS = process.env.CONTRACT_NAME
+// When creating the wallet you can choose to create an access key, so the user
+// can skip signing non-payable methods when talking wth the  contract
+const wallet = new Wallet({ createAccessKeyFor: process.env.CONTRACT_NAME })
 
-// When creating the wallet you can optionally ask to create an access key
-// Having the key enables to call non-payable methods without interrupting the user to sign
-const wallet = new Wallet({ createAccessKeyFor: CONTRACT_ADDRESS })
-const container = document.getElementById('root');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
+// Abstract the logic of interacting with the contract to simplify your flow
+const marketPlace = new MarketPlace({ contractId: process.env.CONTRACT_NAME, walletToUse: wallet });
 
 // Setup on page load
 window.onload = async () => {
   const isSignedIn = await wallet.startUp()
 
-  root.render(
-    <App isSignedIn={isSignedIn} contractId={CONTRACT_ADDRESS} wallet={wallet} />
+  ReactDOM.render(
+    <App isSignedIn={isSignedIn} marketPlace={marketPlace} wallet={wallet} />,
+    document.getElementById('root')
   );
 }

@@ -1,2 +1,3 @@
-DEFINE_NEAR_METHOD(get_greeting)
-DEFINE_NEAR_METHOD(set_greeting)
+DEFINE_NEAR_METHOD(add_tutorial)
+DEFINE_NEAR_METHOD(get_tutorial)
+DEFINE_NEAR_METHOD(total_messages)
