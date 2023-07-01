@@ -1,4 +1,7 @@
 import React from "react";
+import instructor from '../../assets/instructor.png';
+import background from '../../assets/background.png';
+import course from '../../assets/course.png';
 
 function BuyCourse() {
   return (
@@ -10,12 +13,21 @@ function BuyCourse() {
       </header>
 
       <div className="container mx-auto py-8 px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="lg:col-span-2">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img
+                className="w-full h-16 object-cover"
+                src={background}
+                alt="Course"
+              />
+               <div className="container mx-auto py-8 px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img
-                className="w-full h-64 object-cover"
-                src="https://via.placeholder.com/800x400"
+                className="w-full h-120 object-cover"
+                src={course}
                 alt="Course"
               />
               <div className="p-6">
@@ -43,7 +55,7 @@ function BuyCourse() {
               <div className="flex items-center space-x-4">
                 <img
                   className="w-12 h-12 rounded-full object-cover"
-                  src="https://via.placeholder.com/150"
+                  src={instructor}
                   alt="Instructor"
                 />
                 <div>
@@ -52,10 +64,47 @@ function BuyCourse() {
                 </div>
               </div>
             </div>
+            <div className="mt-8">
+              <h2 className="text-xl font-bold mb-4">Course Features</h2>
+              <ul className="list-disc list-inside">
+                <li>10 modules covering various topics</li>
+                <li>Interactive quizzes and assignments</li>
+                <li>Hands-on projects to apply your knowledge</li>
+                <li>Access to exclusive learning materials</li>
+                <li>Certificate of completion</li>
+              </ul>
+            </div>
+            <div className="mt-8">
+              <h2 className="text-xl font-bold mb-4">Student Reviews</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-lg font-semibold">Jane Smith</h3>
+                  <p className="text-gray-700">
+                    "This course exceeded my expectations. The content was
+                    well-structured, and the instructor explained everything
+                    clearly. Highly recommended!"
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Michael Johnson</h3>
+                  <p className="text-gray-700">
+                    "I've learned so much from this course. The hands-on
+                    projects really helped me understand the concepts better.
+                    Great job!"
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    </div>
+    </div>
+
+</div>
+</div>
+
   );
 }
 
