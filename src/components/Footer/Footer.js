@@ -4,7 +4,7 @@ import React from "react";
 import './footer.css'
 function Footer() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-8">
       <div className="p-8 mt-auto">
         <div className="max-w-7xl mx-auto">
           <div className="flex gap-4 justify-between max-md:flex-col max-md:text-center">

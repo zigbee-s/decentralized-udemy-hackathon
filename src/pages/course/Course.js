@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import instructor from '../../assets/instructor.png';
 
 function Course() {
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (newComment) {
+      const commentList = [...comments, newComment];
+      setComments([...comments, newComment]);
+      setNewComment("");
+    }
+  }
+
+  const handleGenerateCertificate = () =>{
+    alert("Generate Certificate")
+  }
+
+  const handleSellCourse = () =>{
+    alert("Sell course");
+  }
+  
   return (
     <div className="mt-20 pt-5 font-Inter">
       <header className="bg-white border-b-2 border-gray-300">
@@ -14,8 +35,15 @@ function Course() {
           <div className="lg:col-span-2">
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <div className="aspect-w-16 aspect-h-9">
-                {/* Replace with your video player component */}
-                <div className="bg-gray-200">Video Player</div>
+                <div className="relative">
+                    <iframe width="800"
+                      height="500"
+                      src="https://www.youtube.com/embed/4pHPI7dTL3I"
+                      title="Course Playlist"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>      
+                </div>
               </div>
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-4">Course Name</h2>
@@ -24,37 +52,70 @@ function Course() {
                   adipisicing elit. Beatae magnam quae, tempora asperiores
                   inventore debitis itaque odio.
                 </p>
-                {/* Replace with your comments component */}
                 <div className="bg-white border-t-2 border-gray-300 p-4">
                   <h3 className="text-lg font-bold mb-4">Comments</h3>
-                  <p className="text-gray-700">User comments go here</p>
+                  {
+                    comments.length > 0 ? (
+                      <ul className="space-y-4">
+                        {comments.map((comment, index) => (
+                          <li key={index} className="bg-white border-t-2 border-gray-300 p-4">
+                            <p className="text-gray-700">{comment}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-700">No comments yet</p>
+                    )
+                  }
+                  <form className="mt-4" onSubmit={handleCommentSubmit}>
+                    <input
+                      type="text"
+                      className="border border-gray-300 p-2 rounded-md w-full"
+                      placeholder="Add a comment"
+                      value={newComment}
+                      onChange={(e) => setNewComment(e.target.value)}
+                    />
+                    <button
+                      type="submit"
+                      className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md font-semibold"
+                    >
+                      Add Comment
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
 
+
           <div className="lg:col-span-1">
             <div className="bg-white shadow-lg rounded-lg p-6">
               <h2 className="text-xl font-bold mb-4">Instructor</h2>
               <div className="flex items-center space-x-4">
-                <img
-                  className="w-12 h-12 rounded-full object-cover"
-                  src="https://via.placeholder.com/150"
-                  alt="Instructor"
-                />
                 <div>
+                  <img
+                    className="w-12 h-12 rounded-full object-cover"
+                    src={instructor}
+                    alt="Instructor"
+                  />
                   <h3 className="text-lg font-semibold">John Doe</h3>
-                  <p className="text-gray-700">Instructor Bio</p>
+                  <p className="text-gray-700">
+                    John Doe is an experienced web developer with a passion for teaching others. He has been working in the industry for over 10 years and has expertise in frontend and backend development. John enjoys sharing his knowledge and helping aspiring developers improve their skills. In his free time, he loves to explore new technologies and contribute to open-source projects.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white shadow-lg rounded-lg p-6 mt-8">
               <h2 className="text-xl font-bold mb-4">Course Options</h2>
-              <button className="px-4 py-2 bg-blue-500 text-white rounded-md font-semibold mb-4">
+              <button className="px-4 py-2 bg-blue-500 text-white rounded-md font-semibold mb-4"
+              onClick={handleGenerateCertificate}
+              >
                 Generate Certificate
               </button>
-              <button className="px-4 py-2 bg-green-500 text-white rounded-md font-semibold">
+              <button className="px-4 py-2 bg-green-500 text-white rounded-md font-semibold"
+              onClick={handleSellCourse}
+              >
                 Sell Course
               </button>
             </div>
