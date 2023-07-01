@@ -80,7 +80,6 @@ const Navbar = () => {
           <div
             className="w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 cursor-pointer"
             onMouseEnter={handleDropdownToggle}
-            onMouseLeave={handleDropdownToggle}
           >
             <img src={avatar} alt="avatar" />
             {isDropdownOpen && (
