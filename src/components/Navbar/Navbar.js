@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import avatar from '../../assets/avatar.png';
-import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
+import { FaSignInAlt, FaUserCircle, FaUserPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -92,6 +93,12 @@ const Navbar = () => {
                   <li onClick={handleLogin} className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer">
                     <FaSignInAlt className="mr-2" />
                     Login
+                  </li>
+                  <li className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                    <Link to='/profile'>
+                    <FaUserCircle className="mr-2" />
+                    Profile
+                    </Link>
                   </li>
                 </ul>
               </div>
