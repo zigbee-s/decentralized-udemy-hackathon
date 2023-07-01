@@ -80,21 +80,29 @@ const Navbar = () => {
         <div className="ml-8 relative">
           <div
             className="w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 cursor-pointer"
-            onMouseEnter={handleDropdownToggle}
+            onClick={handleDropdownToggle}
           >
             <img src={avatar} alt="avatar" />
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-md">
                 <ul>
-                  <li onClick={handleSignup} className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                  <li
+                    onClick={handleSignup}
+                    className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
+                  >
                     <FaUserPlus className="mr-2" />
                     Sign Up
                   </li>
-                  <li onClick={handleLogin} className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                  <li
+                    onClick={handleLogin}
+                    className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
+                  >
                     <FaSignInAlt className="mr-2" />
                     Login
                   </li>
-                  <li className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                  <li
+                    className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
+                  >
                     <Link to='/profile'>
                     <FaUserCircle className="mr-2" />
                     Profile
