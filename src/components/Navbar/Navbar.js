@@ -76,7 +76,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="ml-5 relative">
+        <div className="ml-8 relative">
           <div
             className="w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 cursor-pointer"
             onMouseEnter={handleDropdownToggle}
