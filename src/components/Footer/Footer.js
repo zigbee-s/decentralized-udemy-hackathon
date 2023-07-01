@@ -2,6 +2,7 @@ import React from "react";
 // import Image from "next/image";
 // import footerIcon from "../../images/footer-icon.png";
 import './footer.css'
+
 function Footer() {
   return (
     <div className="flex flex-col min-h-8">

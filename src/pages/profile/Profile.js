@@ -1,24 +1,25 @@
 import React from "react";
-
+import avatar from '../../assets/avatar.png'
 import Navigation from './Navigation';
 import Card from "../explore/Card";
+import background from '../../assets/background.png';
 
 const Profile = () => {
   return (
     <div className="max-w-screen-xl mx-auto p-8 mt-20 pt-5 font-Inter">
       <div className="relative mb-8">
         <div className="absolute inset-0 bg-black">
-          {/* <img
-            src=""
+          <img
+            src={background}
             alt="Profile Background"
             className="object-cover w-full h-full"
-          /> */}
+          />
         </div>
         <div className="relative">
           <div className="flex flex-col items-center pt-20 mb-4">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               <img
-                src="https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-login-interface-abstract-blue-icon-png-image_3917504.jpg"
+                src={avatar}
                 alt="Profile"
                 className="object-cover w-full h-full"
               />

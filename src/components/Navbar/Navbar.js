@@ -1,6 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
+import avatar from '../../assets/avatar.png';
+import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleSignup = () => {
+    alert("Signup")
+  };
+
+  const handleLogin = () => {
+    alert("Login")
+  };
+
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 font-Inter">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
@@ -59,19 +75,29 @@ const Navbar = () => {
             Connect wallet
           </button>
         </div>
-        <div className="ml-5 relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-            <svg
-              className="absolute w-12 h-12 text-gray-400 -left-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
+
+        <div className="ml-5 relative">
+          <div
+            className="w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 cursor-pointer"
+            onMouseEnter={handleDropdownToggle}
+            onMouseLeave={handleDropdownToggle}
+          >
+            <img src={avatar} alt="avatar" />
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-md">
+                <ul>
+                  <li onClick={handleSignup} className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                    <FaUserPlus className="mr-2" />
+                    Sign Up
+                  </li>
+                  <li onClick={handleLogin} className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                    <FaSignInAlt className="mr-2" />
+                    Login
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>
