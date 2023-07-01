@@ -1,6 +1,8 @@
 // React
 import { createRoot } from 'react-dom/client';
 import App from './App';
+// import './tailwind.config';
+// import './index.css';
 
 // NEAR
 import { Wallet } from './near-wallet';
