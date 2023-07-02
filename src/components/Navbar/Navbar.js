@@ -67,7 +67,7 @@ const Navbar = () => {
             type="button"
             className="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800 bg-gradient-to-r from-[#FB65FE] via-[#9010FF] to-[#FB65FE] hover:from-[#9010FF] hover:via-[#FB65FE] hover:to-[#9010FF]"
           >
-            Connect wallet
+            Wallet Connected
           </button>
         </div>
 
@@ -83,15 +83,15 @@ const Navbar = () => {
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                    <Link to='/register' className="flex">
+                    <Link to='/register'>
                     <FaUserPlus className="mr-2" />
-                    Register
+                    Sign Up
                     </Link>
                   </li>
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                    <Link to='/login' className="flex">
+                    <Link to='/login'>
                     <FaSignInAlt className="mr-2" />
                     Login
                     </Link>
@@ -103,6 +103,14 @@ const Navbar = () => {
                     <FaUserCircle className="mr-2" />
                     Profile
                     </Link>
+                  </li>
+                  <li
+                    className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
+                  >
+                  <Link to='/create'>
+                    <FaSignInAlt className="mr-2" />
+                    Create
+                  </Link>
                   </li>
                 </ul>
               </div>
