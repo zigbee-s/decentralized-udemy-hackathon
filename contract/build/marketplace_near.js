@@ -544,6 +544,23 @@ function inputRaw() {
 function input() {
   return decode(inputRaw());
 }
+/**
+ * Create a NEAR promise which will have multiple promise actions inside.
+ *
+ * @param accountId - The account ID of the target contract.
+ */
+function promiseBatchCreate(accountId) {
+  return env.promise_batch_create(accountId);
+}
+/**
+ * Attach a transfer promise action to the NEAR promise index with the provided promise index.
+ *
+ * @param promiseIndex - The index of the promise to attach a transfer action to.
+ * @param amount - The amount of NEAR to transfer.
+ */
+function promiseBatchActionTransfer(promiseIndex, amount) {
+  env.promise_batch_action_transfer(promiseIndex, amount);
+}
 
 function indexToKey(prefix, index) {
   const data = new Uint32Array([index]);
@@ -812,21 +829,11 @@ function NearBindgen({
   };
 }
 
-var _dec, _dec2, _dec3, _dec4, _class, _class2;
-let MarketPlace = (_dec = NearBindgen({}), _dec2 = call({}), _dec3 = view(), _dec4 = view(), _dec(_class = (_class2 = class MarketPlace {
+var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2;
+let MarketPlace = (_dec = NearBindgen({}), _dec2 = call({}), _dec3 = view(), _dec4 = view(), _dec5 = call({
+  payableFunction: true
+}), _dec(_class = (_class2 = class MarketPlace {
   messages = new Vector("v-uid");
-
-  // @call({ payableFunction: true })
-  // // Public - Adds a new message.
-  // add_tutorial({ courseName, description, instructorDetails, cost, imageId, videoId }: { courseName: string, description: string, instructorDetails, cost: string ,imageId: string, videoId: string}) {
-  //   // If the user attaches more than 0.1N the message is premium
-  //   const premium = near.attachedDeposit() >= BigInt(POINT_ONE);
-  //   const sender = near.predecessorAccountId();
-
-  //   const message: Tutorial = { premium, sender, courseName, description, instructorDetails, cost, imageId, videoId };
-  //   this.messages.push(message);
-  // }
-
   // Public - Adds a new message.
   add_tutorial({
     uniqueId,
@@ -862,7 +869,37 @@ let MarketPlace = (_dec = NearBindgen({}), _dec2 = call({}), _dec3 = view(), _de
   total_messages() {
     return this.messages.length;
   }
-}, (_applyDecoratedDescriptor(_class2.prototype, "add_tutorial", [_dec2], Object.getOwnPropertyDescriptor(_class2.prototype, "add_tutorial"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "get_tutorial", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "get_tutorial"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "total_messages", [_dec4], Object.getOwnPropertyDescriptor(_class2.prototype, "total_messages"), _class2.prototype)), _class2)) || _class);
+  buy_tutorial({
+    creator
+  }) {
+    predecessorAccountId();
+    // Get who is calling the method and how much $NEAR they attached
+    let pay = attachedDeposit();
+    let toTransfer = pay;
+
+    // Send the money to the beneficiary
+    const promise = promiseBatchCreate(creator);
+    promiseBatchActionTransfer(promise, toTransfer);
+
+    // this.viewableTuts.set(buyer, "donatedSoFar")
+
+    return "success";
+  }
+}, (_applyDecoratedDescriptor(_class2.prototype, "add_tutorial", [_dec2], Object.getOwnPropertyDescriptor(_class2.prototype, "add_tutorial"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "get_tutorial", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "get_tutorial"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "total_messages", [_dec4], Object.getOwnPropertyDescriptor(_class2.prototype, "total_messages"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "buy_tutorial", [_dec5], Object.getOwnPropertyDescriptor(_class2.prototype, "buy_tutorial"), _class2.prototype)), _class2)) || _class);
+function buy_tutorial() {
+  const _state = MarketPlace._getState();
+  if (!_state && MarketPlace._requireInit()) {
+    throw new Error("Contract must be initialized");
+  }
+  const _contract = MarketPlace._create();
+  if (_state) {
+    MarketPlace._reconstruct(_contract, _state);
+  }
+  const _args = MarketPlace._getArgs();
+  const _result = _contract.buy_tutorial(_args);
+  MarketPlace._saveToStorage(_contract);
+  if (_result !== undefined) if (_result && _result.constructor && _result.constructor.name === "NearPromise") _result.onReturn();else env.value_return(MarketPlace._serialize(_result, true));
+}
 function total_messages() {
   const _state = MarketPlace._getState();
   if (!_state && MarketPlace._requireInit()) {
@@ -904,5 +941,5 @@ function add_tutorial() {
   if (_result !== undefined) if (_result && _result.constructor && _result.constructor.name === "NearPromise") _result.onReturn();else env.value_return(MarketPlace._serialize(_result, true));
 }
 
-export { add_tutorial, get_tutorial, total_messages };
+export { add_tutorial, buy_tutorial, get_tutorial, total_messages };
 //# sourceMappingURL=marketplace_near.js.map

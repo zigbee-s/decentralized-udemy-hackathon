@@ -1,6 +1,6 @@
 /* Talking with a contract often involves transforming data, we recommend you to encapsulate that logic into a class */
 
-// import { utils } from 'near-api-js';
+import { utils } from 'near-api-js';
 
 export class MarketPlace {
 
@@ -30,6 +30,13 @@ export class MarketPlace {
         const number = await this.wallet.viewMethod({ contractId: this.contractId, method: "total_messages" })
         console.log(number)
         return number
+    }
+
+    async buyCourse(creator, coursePrice) {
+        const deposit = utils.format.parseNearAmount(coursePrice.toString());
+        let response = await this.wallet.callMethod(
+            { contractId: this.contractId, method: "buy_tutorial", args: { creator: creator }, deposit })
+        return response
     }
 
 }

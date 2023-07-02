@@ -37,7 +37,7 @@ export default function App({ isSignedIn, marketPlace, wallet }) {
   /// If user not signed-in with wallet - show prompt
   if (!isSignedIn) {
     // Sign-in flow will reload the page later
-    return <SignInPrompt  onClick={() => wallet.signIn()} />;
+    return <SignInPrompt onClick={() => wallet.signIn()} />;
   }
 
 
@@ -57,7 +57,7 @@ export default function App({ isSignedIn, marketPlace, wallet }) {
               <Routes>
                 <Route path="/" element={<Explore marketPlace={marketPlace} />} exact />
                 <Route path="/buyCourse" element={<BuyCourse />} exact />
-                <Route path="/buy/:courseId" element={<BuyCourseActual/>} exact/>
+                <Route path="/buy/:courseId" element={<BuyCourseActual marketPlace={marketPlace} />} exact />
                 <Route path="/course/:courseId" element={<CourseActual />} exact />
                 <Route path="/course" element={<Course />} exact />
                 <Route path="/create" element={<Create marketPlace={marketPlace} />} exact />
