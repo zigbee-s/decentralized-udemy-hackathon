@@ -24,7 +24,6 @@ const Navbar = () => {
             Edu.near
           </span>
         </Link>
-
         <form className="flex-grow mx-4 md:mx-auto">
           <label htmlFor="default-search" className="sr-only">
             Search
@@ -79,14 +78,6 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-md">
                 <ul>
-                  <li
-                    className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
-                  >
-                    <Link to='/register' className="flex">
-                    <FaUserPlus className="mr-2" />
-                    Sign Up
-                    </Link>
-                  </li>
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >

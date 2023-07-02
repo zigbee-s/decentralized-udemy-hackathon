@@ -13,7 +13,6 @@ import Create from "./pages/create/Create";
 import Profile from "./pages/profile/Profile";
 import BuyCourse from "./pages/BuyCourse/BuyCourse";
 import Course from "./pages/course/Course";
-import SignUp from "./pages/auth/SignUp";
 import Login from "./pages/auth/Login";
 
 const App = () => {
@@ -30,7 +29,6 @@ const App = () => {
           <Route path="/course" element={<Course/>} exact/>
           <Route path="/create" element={<Create/>} exact/>
           <Route path="/profile" element={<Profile/>} exact/>
-          <Route path="/register" element={<SignUp/>} exact/>
           <Route path="/login" element={<Login/>} exact/>
           <Route path="*" element={<Navigate to='/' replace/>}/>
         </Routes>
