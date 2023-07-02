@@ -21,6 +21,8 @@ import Course from "./pages/course/Course";
 import './assets/global.css';
 
 import { EducationalText, SignInPrompt, SignOutButton } from './ui-components';
+import BuyCourseActual from './pages/BuyCourse/BuyCourseActual';
+import CourseActual from './pages/course/CourseActual';
 
 
 export default function App({ isSignedIn, marketPlace, wallet }) {
@@ -55,6 +57,8 @@ export default function App({ isSignedIn, marketPlace, wallet }) {
               <Routes>
                 <Route path="/" element={<Explore marketPlace={marketPlace} />} exact />
                 <Route path="/buyCourse" element={<BuyCourse />} exact />
+                <Route path="/buy/:courseId" element={<BuyCourseActual/>} exact/>
+                <Route path="/course/:courseId" element={<CourseActual />} exact />
                 <Route path="/course" element={<Course />} exact />
                 <Route path="/create" element={<Create marketPlace={marketPlace} />} exact />
                 <Route path="/profile" element={<Profile />} exact />
