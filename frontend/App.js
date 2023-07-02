@@ -37,7 +37,7 @@ export default function App({ isSignedIn, marketPlace, wallet }) {
   /// If user not signed-in with wallet - show prompt
   if (!isSignedIn) {
     // Sign-in flow will reload the page later
-    return <SignInPrompt greeting={valueFromBlockchain} onClick={() => wallet.signIn()} />;
+    return <SignInPrompt  onClick={() => wallet.signIn()} />;
   }
 
 

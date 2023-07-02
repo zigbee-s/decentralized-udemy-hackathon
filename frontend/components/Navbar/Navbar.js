@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import avatar from '../../assets/avatar.png';
 import { FaSignInAlt, FaUserCircle, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,28 +11,19 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleSignup = () => {
-    alert("Signup")
-  };
-
-  // const handleLogin = () => {
-  //   alert("Login")
-  // };
-
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 font-Inter">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" className="flex items-center pr-20">
+        <Link to="/" className="flex items-center pr-20">
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8 mr-3"
-            alt="Flowbite Logo"
+            src={logo}
+            className="h-16 mr-3"
+            alt="Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Edu
+            Edu.near
           </span>
-        </a>
-
+        </Link>
         <form className="flex-grow mx-4 md:mx-auto">
           <label htmlFor="default-search" className="sr-only">
             Search
@@ -89,7 +81,7 @@ const Navbar = () => {
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                    <Link to='/profile'>
+                    <Link to='/profile' className="flex">
                     <FaUserCircle className="mr-2" />
                     Profile
                     </Link>
@@ -97,7 +89,7 @@ const Navbar = () => {
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                  <Link to='/create'>
+                  <Link to='/create' className="flex">
                     <FaSignInAlt className="mr-2" />
                     Create
                   </Link>
