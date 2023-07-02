@@ -33,6 +33,7 @@
     "@near-wallet-selector/nightly-connect": "^7.8.0",
     "@near-wallet-selector/sender": "^7.8.0",
     "@near-wallet-selector/wallet-connect": "^7.8.0",
+    "axios": "^1.4.0",
     "near-api-js": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
