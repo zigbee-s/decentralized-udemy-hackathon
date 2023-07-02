@@ -11,11 +11,21 @@ The platform offers new creators a chance to earn more and gain exposure, while 
 2. Higher earning potential through royalties, especially for creators without an existing viewer base.
 3. Building a reputation and gaining recognition in their field.
 
-###For YouTubers:
+### For YouTubers:
 1. Monetizing their existing viewer base through exclusive tutorials.
 2. Expanding their reach beyond YouTube to a broader audience.
 3. Collaborating with new creators for diverse content offerings.
 
+## Key Features
+- NEAR Blockchain: The platform leverages the NEAR blockchain for secure and transparent smart contract functionality, ensuring trust and accuracy in transactions and royalty payments.
+
+- React Frontend: The frontend is built using React, providing a seamless and intuitive user interface for creators, distributors, and viewers.
+
+- Node.js Backend: The Node.js backend handles the business logic, including uploading, rendering, and streaming videos and images. It interacts with Azure cloud services for efficient storage and processing.
+
+- Azure Cloud Integration: The platform utilizes Azure cloud services to store course data, including images and videos. The unique identifiers of these assets are stored in the smart contract, ensuring secure and efficient access.
+
+- Royalty System: A built-in royalty system ensures that creators receive a fair share of earnings when their tutorials are purchased and viewed. This incentivizes creators to produce high-quality content and rewards them for their expertise.
 ## Directory Structure
 - contract: Contains the smart contract code.
 - backend: Includes the Node.js backend code.
