@@ -60,7 +60,9 @@ The backend handles interactions with Azure for rendering and uploading videos a
 <img width="960" alt="screenshot 2" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/86695afa-c7c6-4228-8795-e30535232451">
 <img width="960" alt="screenshot 3" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/050f721a-61f5-4547-afd2-35dd90999902">
 <img width="957" alt="screenshot 4" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/17c4ea7a-8751-41a5-b301-21f287834b72">
-
+<img width="960" alt="screenhost 5" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/94c5e2d6-2f41-4d84-ae0e-b20efd6ae5f8">
+<img width="960" alt="screenshot 6" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/53a5e97c-69fd-4730-b342-e67f5933c6e3">
+<img width="960" alt="screenshot 7" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/da44049a-1971-4b06-ad60-614acb96a1be">
 
 
 
