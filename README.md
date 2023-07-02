@@ -45,3 +45,12 @@ npm run frontend
 Once the application is up and running, users can access the marketplace through the frontend interface. Content creators can upload tutorials, and distributors can purchase them. Distributors can then provide access to the purchased content to end users, who can view the tutorials by paying the specified price. Whenever an end user purchases a tutorial, a royalty fee is automatically paid to the original creator, and the platform retains a percentage as its transaction fee.
 
 The backend handles interactions with Azure for rendering and uploading videos and images. It also enables the streaming of videos in bits for a seamless viewing experience.
+
+<img width="959" alt="screenshot 1" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/e37817a5-07f7-4768-bcdf-74799d63b770">
+<img width="960" alt="screenshot 2" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/86695afa-c7c6-4228-8795-e30535232451">
+<img width="960" alt="screenshot 3" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/050f721a-61f5-4547-afd2-35dd90999902">
+<img width="957" alt="screenshot 4" src="https://github.com/zigbee-s/decentralized-udemy-hackathon/assets/80088403/17c4ea7a-8751-41a5-b301-21f287834b72">
+
+
+
+
