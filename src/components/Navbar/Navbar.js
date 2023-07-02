@@ -22,7 +22,7 @@ const Navbar = () => {
             alt="Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            EduNEAR
+            Edu.near
           </span>
         </Link>
 
