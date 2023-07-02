@@ -15,7 +15,7 @@ function Footer() {
                   {/* <div className="pr-2 mt-2">
                     <Image src={footerIcon} height={52} width={24.69} alt="" />
                   </div> */}
-                  <div className="pl-2">Sall Dapp</div>
+                  <div className="pl-2">Edu.near</div>
                 </div>
               </h4>
               <p className="text-[#000000] pb-2 text-center font-regular text-20 font-Inter">
