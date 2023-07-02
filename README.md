@@ -1,7 +1,17 @@
+<div align='center'>
+
+![logo](https://github.com/zigbee-s/edu.near-hackathon/assets/108334168/5554ea18-a30b-47ea-af5f-cac717377917)
+
+
+<br>
+
 # Edu.near
+
 This project is a marketplace where content creators can upload tutorials, and distributors or YouTubers can purchase them for a certain amount. The distributors can further provide view access to the purchased content to end users. Whenever an end user purchases a tutorial for viewing, a royalty fee is paid to the original creator. Additionally, the platform charges a fixed percentage for all transactions.
 
 The project is built using the NEAR blockchain for smart contract functionality. The frontend is developed using React, while the backend is implemented using Node.js. The cloud services are provided by Azure. The course data, including images and videos, are stored on the cloud, and their unique identifiers are stored in a smart contract. The backend interacts with Azure to render and upload videos and images, and it also includes functionality to stream videos in bits.
+
+</div>
 
 ## Helpful scenario
 The platform offers new creators a chance to earn more and gain exposure, while YouTubers can monetize their audience base and reach new viewers.
