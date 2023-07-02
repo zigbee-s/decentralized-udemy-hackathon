@@ -1,4 +1,4 @@
-# decentralized-udemy-hackathon
+# edu.near-hackathon
 This project is a marketplace where content creators can upload tutorials, and distributors or YouTubers can purchase them for a certain amount. The distributors can further provide view access to the purchased content to end users. Whenever an end user purchases a tutorial for viewing, a royalty fee is paid to the original creator. Additionally, the platform charges a fixed percentage for all transactions.
 
 The project is built using the NEAR blockchain for smart contract functionality. The frontend is developed using React, while the backend is implemented using Node.js. The cloud services are provided by Azure. The course data, including images and videos, are stored on the cloud, and their unique identifiers are stored in a smart contract. The backend interacts with Azure to render and upload videos and images, and it also includes functionality to stream videos in bits.
