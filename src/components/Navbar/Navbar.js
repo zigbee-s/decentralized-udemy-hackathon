@@ -82,7 +82,7 @@ const Navbar = () => {
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                    <Link to='/register'>
+                    <Link to='/register' className="flex">
                     <FaUserPlus className="mr-2" />
                     Sign Up
                     </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                    <Link to='/login'>
+                    <Link to='/login' className="flex">
                     <FaSignInAlt className="mr-2" />
                     Login
                     </Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                  <Link to='/create'>
+                  <Link to='/create' className="flex">
                     <FaSignInAlt className="mr-2" />
                     Create
                   </Link>
