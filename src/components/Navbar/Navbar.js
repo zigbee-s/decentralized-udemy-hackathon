@@ -11,6 +11,13 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleSignup = () => {
+    alert("Signup")
+  };
+
+  const handleLogin = () => {
+    alert("Login")
+  };
 
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 font-Inter">
@@ -81,20 +88,18 @@ const Navbar = () => {
               <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-md">
                 <ul>
                   <li
+                    onClick={handleSignup}
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                    <Link to='/register'>
                     <FaUserPlus className="mr-2" />
                     Sign Up
-                    </Link>
                   </li>
                   <li
+                    onClick={handleLogin}
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
                   >
-                    <Link to='/login'>
                     <FaSignInAlt className="mr-2" />
                     Login
-                    </Link>
                   </li>
                   <li
                     className="flex items-center py-2 px-4 hover:bg-gray-100 cursor-pointer"
